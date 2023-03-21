@@ -1,0 +1,87 @@
+/* Write your CSS here */
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.MoneyManagerContainer {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  height: 150px;
+  width: 80%;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  background-size: cover;
+  padding: 10px;
+}
+.span {
+  color: blue;
+}
+.AddTransactionContainer {
+  display: flex;
+  flex-direction: column;
+  height: 340px;
+  width: 350px;
+  border: 1px solid #7e858e;
+  margin-top: 30px;
+  padding: 20px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.title-input {
+  height: 40px;
+  margin-bottom: 5px;
+}
+.amount-input {
+  height: 40px;
+  margin-bottom: 5px;
+}
+.type-input {
+  height: 40px;
+  margin-bottom: 5px;
+  outline: none;
+}
+.button {
+  color: white;
+  background-color: #0b69ff;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+  border: none;
+  cursor: pointer;
+}
+.history-container {
+  display: flex;
+  flex-direction: column;
+  height: 340px;
+  width: 350px;
+  border: 1px solid #7e858e;
+  margin-top: 30px;
+  padding: 20px;
+  padding: 20px;
+}
+.Add-History-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+}
+.history-table {
+  padding-left: 0;
+}
+.history-details {
+  display: flex;
+  list-style-type: none;
+  border: 1px solid #cbd5e1;
+  justify-content: space-between;
+}
+.line {
+  margin: 0px;
+  border: 0px solid #cbd5e1;
+}
+.cell {
+  margin: 10px;
+}
