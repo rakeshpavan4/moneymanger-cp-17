@@ -1,6 +1,5 @@
 // Write your code here
 import {Component} from 'react'
-import TransactionItem from '../TransactionItem'
 import './index.css'
 
 class MoneyDetails extends Component {
@@ -40,7 +39,6 @@ class MoneyDetails extends Component {
             <p data-testid="expensesAmount">Rs 0</p>
           </div>
         </div>
-        <TransactionItem />
       </div>
     )
   }

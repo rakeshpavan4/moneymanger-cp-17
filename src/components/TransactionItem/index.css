@@ -1,1 +1,29 @@
 /* Write your CSS here */
+.historyRow {
+  list-style-type: none;
+  display: flex;
+  border: 1px solid #cbd5e1;
+  justify-content: space-between;
+  height: 40px;
+  padding-right: 75px;
+}
+.line {
+  margin: 0px;
+  border: 0px solid #cbd5e1;
+}
+.deleteimg {
+  height: 20px;
+  width: 20px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+}
+.cell {
+  text-align: center;
+}
+.delete-row {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,4 +1,7 @@
 import {Component} from 'react'
+import {v4} from 'uuid'
+import TransactionItem from '../TransactionItem'
+
 import MoneyDetails from '../MoneyDetails'
 import './index.css'
 
@@ -15,7 +18,35 @@ const transactionTypeOptions = [
 ]
 
 class MoneyManager extends Component {
+  state = {MoneyList: [], titleInput: '', amountInput: ''}
+
+  OnAdd = event => {
+    event.preventDefault()
+    const {titleInput, amountInput} = this.state
+
+    const newMoneyList = {
+      id: v4(),
+      title: titleInput,
+      amount: amountInput,
+    }
+
+    this.setState(prevstate => ({
+      MoneyList: [...prevstate.MoneyList, newMoneyList],
+      titleInput: '',
+      amountInput: '',
+    }))
+  }
+
+  onTitleInput = event => {
+    this.setState({titleInput: event.target.value})
+  }
+
+  onAmountInput = event => {
+    this.setState({amountInput: event.target.value})
+  }
+
   render() {
+    const {MoneyList, titleInput, amountInput} = this.state
     return (
       <div className="bg-container">
         <div className="MoneyManagerContainer">
@@ -28,30 +59,34 @@ class MoneyManager extends Component {
         <div className="Add-History-container">
           <div className="AddTransactionContainer">
             <h1>Add Transaction</h1>
-            <form className="input-container">
+            <form className="input-container" onSubmit={this.OnAdd}>
               <label htmlFor="title">TITLE</label>
               <input
                 type="text"
                 id="title"
                 className="title-input"
                 placeholder="TITLE"
+                value={titleInput}
+                onChange={this.onTitleInput}
               />
               <label htmlFor="amount">AMOUNT</label>
               <input
                 type="text"
                 id="amount"
+                value={amountInput}
                 className="amount-input"
                 placeholder="AMOUNT"
+                onChange={this.onAmountInput}
               />
               <label htmlFor="type">TYPE</label>
               <select className="type-input">
                 {transactionTypeOptions.map(each => (
-                  <option key={each.optionId} value={each.optionId}>
-                    {each.displayText}
+                  <option key={each.optionId} value={each.displayText}>
+                    {each.optionId}
                   </option>
                 ))}
               </select>
-              <button type="button" className="button">
+              <button type="submit" className="button">
                 Add
               </button>
             </form>
@@ -64,9 +99,11 @@ class MoneyManager extends Component {
                 <hr className="line" />
                 <p className="cell">Amount</p>
                 <hr className="line" />
-
                 <p className="cell">Type</p>
               </li>
+              {MoneyList.map(each => (
+                <TransactionItem key={each.id} details={each} />
+              ))}
             </ul>
           </div>
         </div>
