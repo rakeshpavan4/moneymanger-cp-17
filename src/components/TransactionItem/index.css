@@ -1,29 +1,57 @@
-/* Write your CSS here */
-.historyRow {
-  list-style-type: none;
+.table-row {
   display: flex;
-  border: 1px solid #cbd5e1;
   justify-content: space-between;
-  height: 40px;
-  padding-right: 75px;
-}
-.line {
-  margin: 0px;
-  border: 0px solid #cbd5e1;
-}
-.deleteimg {
-  height: 20px;
-  width: 20px;
+  list-style-type: none;
+  border-bottom: 1px solid #cbd5e1;
+  border-right: 1px solid #cbd5e1;
+  border-left: 1px solid #cbd5e1;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.button {
-  background-color: transparent;
-  border: none;
+@media screen and (min-width: 768px) {
+  .table-row {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
-.cell {
-  text-align: center;
+
+.transaction-text {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 12px;
+  width: 30%;
 }
-.delete-row {
+
+@media screen and (min-width: 768px) {
+  .transaction-text {
+    font-size: 14px;
+  }
+}
+
+.delete-container {
   display: flex;
-  justify-content: space-around;
+  width: 10%;
+}
+
+.delete-button {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-img {
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  align-self: center;
+  border: none;
+  outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .delete-img {
+    margin-right: 24px;
+  }
 }
